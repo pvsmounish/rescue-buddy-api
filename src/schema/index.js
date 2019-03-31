@@ -7,6 +7,12 @@ const typeDefs = gql`
         LOW
     }
 
+    enum Gender {
+        MALE
+        FEMALE
+        OTHER_GENDER
+    }
+
     type Query {
         missingPersons: [MissingPerson!]
         announcements: [Announcement!]
@@ -17,7 +23,7 @@ const typeDefs = gql`
             name: String,
             description: String,
             age: Int,
-            gender: String,
+            gender: Gender,
             photoUrl: String,
             missingDateTime: String,
             guardianName: String,
@@ -36,7 +42,7 @@ const typeDefs = gql`
         name: String
         description: String
         age: Int
-        gender: String
+        gender: Gender
         photoUrl: String
         missingDateTime: String
         guardianName: String
