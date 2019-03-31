@@ -16,7 +16,8 @@ const typeDefs = gql`
     type Query {
         missingPersons: [MissingPerson!]
         announcements: [Announcement!]
-        volunteers: [Volunteer]
+        volunteers: [Volunteer!]
+        reliefCamps: [ReliefCamp!]
     }
 
     type Mutation {
@@ -44,6 +45,15 @@ const typeDefs = gql`
             mobileNumber: String,
             category: String
         ): Volunteer
+
+        createReliefCamp(
+            campName: String,
+            latitude: String,
+            longitude: String,
+            address: String,
+            mobileNumber: String
+        ): ReliefCamp
+
     }
 
     type MissingPerson {
@@ -74,6 +84,15 @@ const typeDefs = gql`
         address: String
         mobileNumber: String
         category: String
+    }
+
+    type ReliefCamp {
+        id: ID!
+        campName: String
+        latitude: String
+        longitude: String
+        address: String
+        mobileNumber: String
     }
 `;
 
