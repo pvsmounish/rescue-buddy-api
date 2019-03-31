@@ -16,6 +16,7 @@ const typeDefs = gql`
     type Query {
         missingPersons: [MissingPerson!]
         announcements: [Announcement!]
+        volunteers: [Volunteer]
     }
 
     type Mutation {
@@ -35,6 +36,14 @@ const typeDefs = gql`
             from: String,
             priority: Priority
         ): Announcement
+
+        createVolunteer(
+            name: String,
+            city: String,
+            address: String,
+            mobileNumber: String,
+            category: String
+        ): Volunteer
     }
 
     type MissingPerson {
@@ -52,10 +61,19 @@ const typeDefs = gql`
 
     type Announcement{
         id: ID!
-        description: String,
-        from: String,
+        description: String
+        from: String
         priority: Priority
         createdAt: String
+    }
+
+    type Volunteer {
+        id: ID!
+        name: String
+        city: String
+        address: String
+        mobileNumber: String
+        category: String
     }
 `;
 

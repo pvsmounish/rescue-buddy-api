@@ -1,5 +1,6 @@
 const missingPersonModule = require('./missingPerson');
 const announcementModule = require('./announcement');
+const volunteerModule = require('./volunteer');
 
 module.exports = {
     Query: {
@@ -9,6 +10,9 @@ module.exports = {
         announcements: async(_, params, context) => {
             return await announcementModule.getAnnouncements();
         },
+        volunteers: async(_, params, context) => {
+            return await volunteerModule.getVolunteers();
+        },
         
     },
     Mutation: {
@@ -17,6 +21,9 @@ module.exports = {
         },
         createAnnouncement: async(_, params, context) => {
             return await announcementModule.createAnnouncement(params);
+        },
+        createVolunteer: async(_, params, context) => {
+            return await volunteerModule.createVolunteer(params);
         },
     },
 };
