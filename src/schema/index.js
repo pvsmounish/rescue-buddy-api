@@ -40,8 +40,10 @@ const typeDefs = gql`
 
         createVolunteer(
             name: String,
+            age: Int,
             city: String,
             address: String,
+            gender: Gender,
             mobileNumber: String,
             category: String
         ): Volunteer
@@ -80,8 +82,10 @@ const typeDefs = gql`
     type Volunteer {
         id: ID!
         name: String
+        age: Int
         city: String
         address: String
+        gender: Gender
         mobileNumber: String
         category: String
     }
