@@ -18,6 +18,7 @@ const typeDefs = gql`
         announcements: [Announcement!]
         volunteers: [Volunteer!]
         reliefCamps: [ReliefCamp!]
+        donations: [Donation!]
     }
 
     type Mutation {
@@ -55,6 +56,12 @@ const typeDefs = gql`
             address: String,
             mobileNumber: String
         ): ReliefCamp
+
+        createDonation(
+            name: String,
+            city: String,
+            amount: Int
+        ): Donation
 
     }
 
@@ -97,6 +104,14 @@ const typeDefs = gql`
         longitude: String
         address: String
         mobileNumber: String
+    }
+
+    type Donation {
+        id: ID!
+        name: String
+        city: String
+        amount: Int
+        createdAt: String
     }
 `;
 
