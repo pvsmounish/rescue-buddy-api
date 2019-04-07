@@ -2,7 +2,8 @@ const missingPersonModule = require('./missingPerson');
 const announcementModule = require('./announcement');
 const volunteerModule = require('./volunteer');
 const reliefCampModule = require('./reliefCamp');
-const donationModule = require('.//donation');
+const donationModule = require('./donation');
+const requestHelpModule = require('./requestHelp');
 
 module.exports = {
     Query: {
@@ -21,7 +22,9 @@ module.exports = {
         donations: async(_, params, context) => {
             return await donationModule.getDonations();
         },
-        
+        requestHelps: async(_, params, context) => {
+            return await requestHelpModule.getRequestHelps();
+        },
     },
     Mutation: {
         createMissingPerson: async(_, params, context) => {
@@ -38,6 +41,9 @@ module.exports = {
         },
         createDonation: async(_, params, context) => {
             return await donationModule.createDonation(params);
+        },
+        createRequestHelp: async(_, params, context) => {
+            return await requestHelpModule.createRequestHelp(params);
         },
     },
 };
