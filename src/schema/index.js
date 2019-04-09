@@ -31,7 +31,9 @@ const typeDefs = gql`
             photoUrl: String,
             missingDateTime: String,
             guardianName: String,
-            guardianMobile: String
+            guardianMobile: String,
+            city: String,
+            address: String
         ): MissingPerson
     
         createAnnouncement(
@@ -83,6 +85,8 @@ const typeDefs = gql`
         missingDateTime: String
         guardianName: String
         guardianMobile: String
+        city: String
+        address: String
         createdAt: String
     }
 

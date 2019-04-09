@@ -10,6 +10,8 @@ const missingPersonSchema = new Schema({
     missingDateTime: Date,
     guardianName: String,
     guardianMobile: String,
+    city: String,
+    address: String,
     createdAt: { type: Date, default: Date.now }
 });
 
