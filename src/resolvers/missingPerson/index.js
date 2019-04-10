@@ -9,7 +9,18 @@ const createMissingPerson = async (missingPerson) => {
     return await newMissingPerson.save();
 }
 
+const deleteMissingPerson = async (id) => {
+    try {
+        await MissingPersonModel.findByIdAndDelete(id);
+        return `Deleted ${id}`;
+    } catch (error) {
+        return 'Error';
+    }
+    
+}
+
 module.exports = {
     getMissingPersons,
-    createMissingPerson
+    createMissingPerson,
+    deleteMissingPerson
 }

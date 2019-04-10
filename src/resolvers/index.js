@@ -30,6 +30,9 @@ module.exports = {
         createMissingPerson: async(_, params, context) => {
             return await missingPersonModule.createMissingPerson(params);
         },
+        deleteMissingPerson: async(_, params, context) => {
+            return await missingPersonModule.deleteMissingPerson(params.id);
+        },
         createAnnouncement: async(_, params, context) => {
             return await announcementModule.createAnnouncement(params);
         },
