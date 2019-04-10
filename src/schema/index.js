@@ -35,6 +35,10 @@ const typeDefs = gql`
             city: String,
             address: String
         ): MissingPerson
+
+        deleteMissingPerson(
+            id: ID!
+        ): String
     
         createAnnouncement(
             description: String,
